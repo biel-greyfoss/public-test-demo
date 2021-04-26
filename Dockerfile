@@ -8,6 +8,6 @@ EXPOSE 9000
 
 COPY ./app /app
 
-CMD exec gunicorn main:app -b 0.0.0.0:9000  -k uvicorn.workers.UvicornH11Worker
+CMD exec unicorn main:app --host 0.0.0.0 --port 9000  --timeout-keep-alive 0
 
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9000"]
