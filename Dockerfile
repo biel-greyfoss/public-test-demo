@@ -8,4 +8,6 @@ EXPOSE 9000
 
 COPY ./app /app
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9000"]
+CMD exec gunicorn main:app -b 0.0.0.0:9000  -k uvicorn.workers.UvicornH11Worker
+
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9000"]
