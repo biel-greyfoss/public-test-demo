@@ -1,7 +1,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
 
-RUN pip install fastapi uvicorn
+RUN pip install fastapi uvicorn starlette
 
 
 EXPOSE 9000
